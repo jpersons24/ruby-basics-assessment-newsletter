@@ -30,6 +30,7 @@ ARTICLES = [
 def calculate_recipients
   SUBSCRIBERS.difference(UNSUBSCRIBED)
 end
+# binding.pry
 
 def first_n_articles(number_of_articles)
   ARTICLES.first(number_of_articles)
@@ -39,6 +40,7 @@ end
 def print_recipients
   calculate_recipients * ", "
 end
+# binding.pry
 
 
 def print_one_article(article)
@@ -46,6 +48,7 @@ def print_one_article(article)
   puts "by: #{article[:author]}\n"
   puts "#{article[:text]}\n"
 end
+# binding.pry
 
 
 def print_many_articles(articles)
@@ -53,6 +56,7 @@ def print_many_articles(articles)
     print_one_article(article)
   end
 end
+# binding.pry
 
 
 def format_campus_location(campus)
@@ -70,10 +74,10 @@ end
 def print_newsletter(number)
   puts "Generating this week's newsletter...\n\n"
 
-  print "SUBJECT: "
+  print "SUBJECT: #{format_subject}"
   format_subject
 
-  print "RECIPIENTS: "
+  print "RECIPIENTS: #{print_recipients}"
   print_recipients
 
   puts "\nBODY:"
